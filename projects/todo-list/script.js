@@ -1,23 +1,22 @@
-function tambahTugas() {
-  const input = document.getElementById("tugasInput");
-  const teks = input.value.trim();
-  if (teks === "") return;
+ const addBtn = document.getElementById("addTaskBtn");
+const taskInput = document.getElementById("taskInput");
+const taskList = document.getElementById("taskList");
 
-  const ul = document.getElementById("daftarTugas");
+addBtn.addEventListener("click", function () {
+  const taskText = taskInput.value.trim();
+  if (taskText === "") return;
+
   const li = document.createElement("li");
-  li.textContent = teks;
+  li.textContent = taskText;
 
-  // Toggle selesai
-  li.addEventListener("click", function () {
-    li.classList.toggle("selesai");
+  const delBtn = document.createElement("button");
+  delBtn.textContent = "Hapus";
+  delBtn.addEventListener("click", function () {
+    taskList.removeChild(li);
   });
 
-  // Klik kanan untuk hapus
-  li.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-    ul.removeChild(li);
-  });
+  li.appendChild(delBtn);
+  taskList.appendChild(li);
 
-  ul.appendChild(li);
-  input.value = "";
-}
+  taskInput.value = "";
+});
