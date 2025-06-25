@@ -1,0 +1,107 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+header h1 {
+  font-size: 36px;
+  margin-bottom: 0;
+}
+
+header p {
+  font-size: 18px;
+  color: #555;
+}
+.container {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.kiri img {
+  border-radius: 10px;
+  max-width: 100%;
+}
+.kiri img:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+.kanan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.judul-bab {
+  color: darkgreen;
+  border-bottom: 2px solid #ccc;
+  margin-top: 40px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1a252f;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+button {
+  background: linear-gradient(to right, #2c3e50, #4e5d6c);
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #1a252f, #2c3e50);
+}
+a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: darkblue;
+}
+.bagian {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
