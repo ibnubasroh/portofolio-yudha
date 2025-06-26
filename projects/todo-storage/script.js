@@ -44,3 +44,4 @@ addBtn.addEventListener("click", () => {
 });
 
 renderTasks();
+{ text: "Belajar JavaScript", time: "24 Juni 2025, 07:10" }
