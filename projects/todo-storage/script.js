@@ -1,14 +1,22 @@
-const addBtn = document.getElementById("addTaskBtn");
+ const addBtn = document.getElementById("addTaskBtn");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+function formatWaktu() {
+  const now = new Date();
+  return now.toLocaleString("id-ID", {
+    weekday: "long", day: "numeric", month: "long",
+    year: "numeric", hour: "2-digit", minute: "2-digit"
+  });
+}
+
 function renderTasks() {
   taskList.innerHTML = "";
-  tasks.forEach((task, index) => {
+  tasks.forEach((taskObj, index) => {
     const li = document.createElement("li");
-    li.textContent = task;
+    li.innerHTML = `<strong>${taskObj.text}</strong><br><small>Ditambahkan: ${taskObj.time}</small>`;
 
     const delBtn = document.createElement("button");
     delBtn.textContent = "Hapus";
@@ -27,10 +35,12 @@ addBtn.addEventListener("click", () => {
   const taskText = taskInput.value.trim();
   if (taskText === "") return;
 
-  tasks.push(taskText);
+  const waktu = formatWaktu();
+
+  tasks.push({ text: taskText, time: waktu });
   localStorage.setItem("tasks", JSON.stringify(tasks));
   renderTasks();
   taskInput.value = "";
 });
 
-renderTasks(); // render saat halaman dibuka
+renderTasks();
